@@ -3,6 +3,7 @@ package racingcar.service;
 import java.util.List;
 import racingcar.model.Car;
 import racingcar.model.Cars;
+import racingcar.utils.Random;
 
 public class RaceServiceImpl implements RaceService {
     private Cars cars;
@@ -14,7 +15,8 @@ public class RaceServiceImpl implements RaceService {
 
     @Override
     public List<Car> startRace() {
-        cars.startRace();
+        List<Integer> randomNumbers = Random.createRandomNumbers(cars.getCars().size());
+        cars.startRace(randomNumbers);
         return cars.getCars();
     }
 

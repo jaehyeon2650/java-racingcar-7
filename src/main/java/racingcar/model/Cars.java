@@ -25,7 +25,10 @@ public class Cars {
         return cars.stream().filter(car -> car.getLocation() == maxNumber).toList();
     }
 
-    public void startRace() {
-        cars.forEach(Car::startRace);
+    public void startRace(List<Integer> randomNumbers) {
+        for (int i = 0; i < cars.size(); i++) {
+            Car car = cars.get(i);
+            car.startRace(randomNumbers.get(i));
+        }
     }
 }

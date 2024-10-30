@@ -3,8 +3,6 @@ package racingcar.model;
 import static racingcar.constant.NumberType.NUMBER_THRESHOLD;
 import static racingcar.constant.NumberType.START_LOCATION;
 
-import racingcar.utils.Random;
-
 public class Car {
     private final String name;
     private int location;
@@ -30,8 +28,7 @@ public class Car {
         this.location++;
     }
 
-    public void startRace() {
-        int randomNumber = Random.createRandomNumber();
+    public void startRace(int randomNumber) {
         if (randomNumber >= NUMBER_THRESHOLD.getNumber()) {
             go();
         }
